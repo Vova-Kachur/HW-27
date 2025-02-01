@@ -1,8 +1,69 @@
-.box{
+.menubox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 40px;
     background-color: gray;
-    transform: rotate(360deg)
-    right: 200px;
+    display: flex;
+    transition: width 220ms;
 }
-.title{
-    color: white
+
+.menubox-title {
+    writing-mode: vertical-rl;
+    color: white;
+    font-weight: 100;
+    font-size: 25px;
+    text-align: center;
+    margin-left: 5px;
+    opacity: 1;
+}
+
+.menubox:hover {
+    width: 250px;
+    .menubox-title {
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 250ms ease, transform 250ms ease;
+    }
+    .menubox-list {
+        visibility: visible;
+    }
+}
+
+.menubox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    visibility: hidden;
+    margin-top: 40px;
+    box-shadow: 5px;
+}
+
+.list-item {
+    width: 125px;
+}
+
+
+.list-item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: tomato;
+    display: block;
+    display: inline-flex;
+    margin-right: 5px;
+    transform: rotate(45deg);
+}
+
+.list-link {
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+    transition: all 0.2s linear
+}
+
+.list-link:hover {
+    color: orange;
+    box-shadow: 5px;
 }
