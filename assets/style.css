@@ -21,7 +21,7 @@
 
 .box:hover {
     width: 250px;
-    .menubox-title {
+    .title {
       opacity: 0;
       transform: scale(0.5);
       transition: opacity 250ms ease, transform 250ms ease;
